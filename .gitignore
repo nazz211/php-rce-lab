@@ -1,0 +1,4 @@
+logs/
+*.log
+app/uploads/*
+!app/uploads/.gitkeep

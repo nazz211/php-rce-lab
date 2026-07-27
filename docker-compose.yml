@@ -1,0 +1,14 @@
+services:
+  php-lab:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: php-rce-lab:local
+    container_name: php-rce-lab
+    ports:
+      - "127.0.0.1:8081:80"
+    volumes:
+      - ./app/uploads:/var/www/html/uploads
+    restart: unless-stopped
+    environment:
+      LAB_WARNING: "WARNING: Intentionally Vulnerable Cybersecurity Lab. Run only on localhost or an isolated test network. Never expose this application to the public internet."
